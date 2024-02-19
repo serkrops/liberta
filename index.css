@@ -1,3 +1,12 @@
+:root {
+  --color-primary: #fcba1a;
+  --color-secondary: #f2f2f2;
+  --color-gray: gray;
+  --color-black: #212121;
+  --color-white: #ffffff;
+  --color-text: #b6b6b6;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Josefin Sans", sans-serif;
@@ -37,7 +46,7 @@ p {
   padding: 1rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #f2f2f2;
+  background-color: var(--color-secondary);
 }
 
 .form-block__inputs-button {
@@ -45,7 +54,7 @@ p {
   padding: 1rem;
   border: none;
   border-radius: 0.5rem;
-  color: #cac8c3;
+  color: var(--color-text);
   cursor: pointer;
 }
 
@@ -76,11 +85,11 @@ p {
   height: 15px;
   border-radius: 10%;
   background-image: none;
-  border: black 1px solid;
+  border: var(--color-black) 1px solid;
 }
 
 .radio-block input[type="radio"]:checked {
-  background-color: #fcba1a;
+  background-color: var(--color-primary);
   box-shadow: none;
 }
 
@@ -111,24 +120,28 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 input[type="range"]::-webkit-slider-thumb,
 input[type="range"]::-webkit-slider-runnable-track {
-  background-color: #fcba1a;
+  background-color: var(--color-primary);
   height: 1rem;
   width: 1rem;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-  background-color: gray;
+  background-color: var(--color-gray);
   border-radius: 0.5rem;
   height: 0.15rem;
 }
 
+input[type="range"]::-webkit-slider-thumb {
+  margin-top: -7px;
+}
+
 input[type="range"]:focus::-webkit-slider-thumb {
-  outline: 3px solid #fcba1a;
+  outline: 3px solid var(--color-primary);
   outline-offset: 0.125rem;
 }
 
 input[type="range"]::-moz-range-track {
-  background-color: gray;
+  background-color: var(--color-gray);
   border-radius: 0.5rem;
   height: 0.15rem;
 }
@@ -136,13 +149,13 @@ input[type="range"]::-moz-range-track {
 input[type="range"]::-moz-range-thumb {
   border: none;
   border-radius: 50%;
-  background-color: #fcba1a;
+  background-color: var(--color-primary);
   height: 1rem;
-  width: 1rem;
+  width: 1rem; 
 }
 
 input[type="range"]:focus::-moz-range-thumb {
-  outline: 3px solid #fcba1a;
+  outline: 3px solid var(--color-primary);
   outline-offset: 0.125rem;
 }
 
@@ -151,17 +164,17 @@ input[type="range"]:focus::-moz-range-thumb {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #212121;
+  background-color: var(--color-black);
 }
 
 .labels__text {
   font-size: 1.5rem;
-  color: #b6b6b6;
+  color: var(--color-text);
 }
 
 .labels__value {
   font-size: 2.2rem;
-  color: #fcba1a;
+  color: var(--color-primary);
 }
 
 .consultation {
@@ -169,15 +182,15 @@ input[type="range"]:focus::-moz-range-thumb {
   justify-content: center;
   align-items: center;
   border: none;
-  background-color: #fcba1a;
+  background-color: var(--color-primary);
   padding: 1rem;
-  width: 100%;
   flex-direction: row;
   border-radius: 3rem;
+  transition: transform 0.3s ease-in-out;
 }
 
-.consultation-button {
-  width: 100%;
+.consultation:hover {
+  transform: scale(1.2);
 }
 
 .consultation-button__text {
@@ -217,7 +230,7 @@ input[type="range"]:focus::-moz-range-thumb {
   }
 
   .consultation-block {
-    padding: 1rem;
+    padding: 3rem;
     flex-direction: row;
     row-gap: 1rem;
     align-items: center;
@@ -230,7 +243,7 @@ input[type="range"]:focus::-moz-range-thumb {
 
   .consultation {
     border-radius: 50%;
-    background-color: #fcba1a;
+    background-color: var(--color-primary);
     width: 10rem;
     height: 10rem;
   }
