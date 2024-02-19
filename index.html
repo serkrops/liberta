@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row row-section">
+        <div class="col-md-2 column-section img-block"></div>
+        <div class="col-md-6 column-section form-block">
+          <h4 class="form-block__title">
+            Расчитать стоимость ремонта квартиры за 1 минуту
+          </h4>
+          <div>
+            <p class="form-block__label">Вид ремонта:</p>
+            <div class="radio-block">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="repairType"
+                  id="full"
+                  checked
+                />
+                <label class="form-check-label" for="full">
+                  Капитальный ремонт
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="repairType"
+                  id="key"
+                />
+                <label class="form-check-label" for="key">
+                  Ремонт под ключ
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="repairType"
+                  id="premium"
+                />
+                <label class="form-check-label" for="premium">
+                  Ремонт премиум-класс
+                </label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="form-block__label">Тип недвижимости:</p>
+            <div class="radio-block">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="buildingType"
+                  id="new"
+                  checked
+                />
+                <label class="form-check-label" for="new"> Новостройка </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="buildingType"
+                  id="old"
+                />
+                <label class="form-check-label" for="old"> Вторичка </label>
+              </div>
+            </div>
+          </div>
+          <div class="slider-block">
+            <p class="form-block__label">Укажите площадь:</p>
+            <div class="slider-container">
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="500"
+                step="1"
+                id="slider"
+              />
+              <div id="bubble"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 column-section consultation-block">
+          <div class="text-wrapper">
+            <div class="labels">
+              <p class="labels__text">Сроки:</p>
+              <h2 class="labels__value">от 10 до 12 дней</h2>
+            </div>
+            <div class="labels">
+              <p class="labels__text">Стоимость:</p>
+              <h2 class="labels__value">от $3000</h2>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            <button class="consultation">
+              <div class="consultation-button">
+                <span class="consultation-button__text"
+                  >Получить консультацию &#10230;</span
+                >
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var slider = document.getElementById("slider");
+      var bubble = document.getElementById("bubble");
+
+      slider.addEventListener("input", function () {
+        bubble.innerHTML = `${this.value} м²`;
+        let percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+        bubble.style.left = `calc(${percent}%`;
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
